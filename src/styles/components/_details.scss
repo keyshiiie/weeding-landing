@@ -1,0 +1,256 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// HERO BANNER
+// ============================================
+.details-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($color-black, 0.3);
+    z-index: 1;
+  }
+
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 2;
+    padding-top: clamp(120px, 15vw, 250px);
+    padding-bottom: clamp(120px, 15vw, 250px);
+  }
+
+  &__title {
+    color: $color-white;
+    font-family: $font-serif;
+    font-size: clamp(32px, 5vw, 50px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+}
+
+// ============================================
+// INTRO (зелёный блок)
+// ============================================
+.details-intro {
+  background-color: $color-white;
+
+  &__container {
+    @include container;
+    padding-top: clamp(40px, 8vw, 90px);
+    padding-bottom: clamp(40px, 8vw, 40px);
+  }
+
+  &__box {
+    // Убрали max-width: 1020px, чтобы блок тянулся по контейнеру
+    width: 100%;
+    background-color: $color-grey;
+    padding: clamp(40px, 8vw, 190px) clamp(20px, 5vw, 60px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(20px, 8vw, 70px);
+  }
+
+  &__text {
+    font-family: $font-body;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.5;
+    color: $color-white;
+    max-width: 560px; // Ограничиваем только текст для читаемости
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 16px 64px;
+    background-color: $color-bg-beige;
+    color: $color-black;
+    font-family: $font-body;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 40px;
+    transition: opacity 0.3s ease;
+
+    
+    &:hover { opacity: 0.8; }
+  }
+}
+
+// ============================================
+// FULL WIDTH IMAGE
+// ============================================
+.details-image-full {
+  @include container;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    // Убрали max-width: 1200px, чтобы картинка тянулась по контейнеру
+  }
+}
+
+// ============================================
+// INFO CARDS
+// ============================================
+.details-info {
+  &__container {
+    @include container;
+    padding-top: clamp(10px, 3vw, 24px);
+    padding-bottom: clamp(16px, 3vw, 48px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    // Убрали max-width: 900px — теперь сетка по ширине контейнера
+
+    @include tablet-down {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background-color: $color-bg-light;
+    padding: clamp(30px, 5vw, 60px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label, &__value {
+    font-family: $font-body;
+    font-size: 28px;
+    color: $color-accent-1;
+  }
+
+  &__value {
+    color: $color-black;
+  }
+}
+
+// ============================================
+// TRAVEL BANNER
+// ============================================
+.details-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($color-black, 0.2);
+    z-index: 1;
+  }
+
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 2;
+    padding-top: clamp(180px, 10vw, 350px);
+    padding-bottom: clamp(180px, 10vw, 350px);
+  }
+
+  &__title {
+    color: $color-white;
+    font-family: $font-serif;
+    font-size: clamp(24px, 4vw, 40px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+}
+
+// ============================================
+// FEATURES
+// ============================================
+.details-features {
+  background-color: $color-white;
+
+  &__container {
+    @include container;
+    padding-top: clamp(40px, 8vw, 100px);
+    padding-bottom: clamp(40px, 8vw, 100px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 8vw, 100px);
+  }
+}
+
+.details-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 400px;
+  // Убрали max-width: 1000px — теперь блок по ширине контейнера
+  width: 100%;
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+  }
+
+  &--reverse {
+    .details-feature__text-box { order: 2; }
+    .details-feature__img-box { order: 1; }
+
+    @include tablet-down {
+      .details-feature__text-box { order: 1; }
+      .details-feature__img-box { order: 2; }
+    }
+  }
+
+  &__text-box {
+    background-color: $color-bg-light;
+    padding: clamp(30px, 5vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      font-family: $font-body;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.5;
+      color: $color-black;
+      max-width: 400px; // Оставляем только для читаемости текста
+      margin: 0;
+    }
+  }
+
+  &__img-box {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}

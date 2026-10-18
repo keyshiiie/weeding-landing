@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+// ============================================
+// МЕДИА-ЗАПРОСЫ
+// ============================================
+@mixin wide-down {
+  @media (max-width: #{$bp-wide - 1}) { @content; }
+}
+
+@mixin desktop-down {
+  @media (max-width: #{$bp-desktop - 1}) { @content; }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$bp-tablet - 1}) { @content; }
+}
+
+@mixin mobile-down {
+  @media (max-width: #{$bp-mobile - 1}) { @content; }
+}
+
+// ============================================
+// КОНТЕЙНЕР (адаптивный)
+// ============================================
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding-left: clamp(16px, 5vw, 100px);
+  padding-right: clamp(16px, 5vw, 100px);
+
+  @include mobile-down {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+// ============================================
+// FLEX-ХЕЛПЕРЫ
+// ============================================
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

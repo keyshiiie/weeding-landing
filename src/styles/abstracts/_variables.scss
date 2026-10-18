@@ -1,0 +1,38 @@
+// ============================================
+// ЦВЕТА
+// ============================================
+$color-white:         #FFFFFF;
+$color-black:         #000000;
+$color-grey:          #7D7662;
+$color-bg-light:      #EEEEEB;
+$color-bg-beige:      #E1DBCB;
+$color-accent-1:      #49463E;
+$color-accent-2:      #F2F2F0;
+
+// ============================================
+// ТИПОГРАФИКА
+// ============================================
+$font-heading:        'Aboreto', cursive;
+$font-serif:          'Marcellus', serif;
+$font-body:           'EB Garamond', serif;
+
+// ============================================
+// БРЕЙКПОИНТЫ
+// ============================================
+$bp-mobile-sm:        375px;
+$bp-mobile:           480px;
+$bp-tablet:           768px;
+$bp-desktop:          1024px;
+$bp-wide:             1440px;
+
+// ============================================
+// КОНТЕЙНЕР И ОТСТУПЫ
+// ============================================
+$container-max:       1240px;
+$container-padding:   20px;
+
+$gap-xs:              8px;
+$gap-sm:              16px;
+$gap-md:              24px;
+$gap-lg:              40px;
+$gap-xl:              64px;

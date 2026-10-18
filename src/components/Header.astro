@@ -1,0 +1,44 @@
+---
+const navLinks = [
+  { label: 'HOME', href: '/' },
+  { label: 'OUR STORY', href: '/our-story' },
+  { label: 'DETAILS', href: '/details' },
+  { label: 'RSVP', href: '/rsvp' },
+];
+---
+
+<header class="header">
+  <div class="header__container">
+    <div class="header__brand">
+      <span class="header__logo">J&J</span>
+      <span class="header__date">June 23rd, 2025</span>
+    </div>
+
+    <nav class="header__nav">
+      {navLinks.map(link => (
+        <a href={link.href} class="header__link">{link.label}</a>
+      ))}
+    </nav>
+
+    <button class="header__menu-btn" id="open-menu" aria-label="Open menu">
+      MENU
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu__close" id="close-menu" aria-label="Close menu">
+    &times;
+  </button>
+
+  <nav class="mobile-menu__nav">
+    {navLinks.map(link => (
+      <a href={link.href} class="mobile-menu__link">{link.label}</a>
+    ))}
+  </nav>
+</div>
+
+<script>
+  import { initMobileMenu } from '../scripts/menu.js';
+  initMobileMenu();
+</script>

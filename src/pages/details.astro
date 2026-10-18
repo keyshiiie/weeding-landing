@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RegistryBanner from '../components/RegistryBanner.astro';
+
+import headerBg from '../images/details-hero.jpg';
+import photoHouse from '../images/details-house.jpg';
+import photoFlowers from '../images/details-flowers.jpg';
+import photoRoom from '../images/details-room.jpg';
+import travelBg from '../images/details-travel-bg.jpg';
+---
+
+<BaseLayout title="Details — Jenny & Jason">
+  <!-- HERO -->
+  <section class="details-hero" style={`background-image: url(${headerBg.src});`}>
+    <div class="details-hero__overlay"></div>
+    <div class="details-hero__container">
+      <h1 class="details-hero__title">THE DETAILS</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="details-intro">
+    <div class="details-intro__container">
+      <div class="details-intro__box">
+        <p class="details-intro__text">
+          We invite you to our wedding at Golden Elm Manor, an enchanting place where towering elms meet candlelit pathways. And where our next adventure begins.
+        </p>
+        <a href="/rsvp" class="details-intro__btn">RSVP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL IMAGE -->
+  <section class="details-image-full">
+    <img src={photoHouse.src} alt="Golden Elm Manor" />
+  </section>
+
+  <!-- INFO -->
+  <section class="details-info">
+    <div class="details-info__container">
+      <div class="details-info__card">
+        <div class="details-info__item">
+          <span class="details-info__label">Date:</span>
+          <span class="details-info__value">Saturday, September 20, 2025</span>
+        </div>
+        <div class="details-info__item">
+          <span class="details-info__label">Venue:</span>
+          <span class="details-info__value">The Golden Elm Manor, St. Augustine, NY</span>
+        </div>
+        <div class="details-info__item">
+          <span class="details-info__label">Ceremony Begins:</span>
+          <span class="details-info__value">4:30 PM</span>
+        </div>
+        <div class="details-info__item">
+          <span class="details-info__label">Reception:</span>
+          <span class="details-info__value">6:00 PM – Midnight</span>
+        </div>
+      </div>
+
+      <div class="details-info__card">
+        <div class="details-info__item">
+          <span class="details-info__label">Musical Guest:</span>
+          <span class="details-info__value">The Starlight Quartet, followed by a surprise jazz ensemble.</span>
+        </div>
+        <div class="details-info__item">
+          <span class="details-info__label">Dinner:</span>
+          <span class="details-info__value">A seasonal farm-to-table menu featuring dishes inspired by our favorite travels.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAVEL BANNER -->
+  <section class="details-banner" style={`background-image: url(${travelBg.src});`}>
+    <div class="details-banner__overlay"></div>
+    <div class="details-banner__container">
+      <h2 class="details-banner__title">TRAVEL & STAY</h2>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="details-features">
+    <div class="details-features__container">
+      <div class="details-feature">
+        <div class="details-feature__text-box">
+          <p>Golden Elm Manor is a 90-minute train ride from Grand Central Station, with direct routes to St. Augustine. Complimentary shuttles will be available from the station to the T.</p>
+        </div>
+        <div class="details-feature__img-box">
+          <img src={photoFlowers.src} alt="Flowers" />
+        </div>
+      </div>
+
+      <div class="details-feature details-feature--reverse">
+        <div class="details-feature__img-box">
+          <img src={photoRoom.src} alt="Hotel Room" />
+        </div>
+        <div class="details-feature__text-box">
+          <p>We've reserved charming accommodations at The Wildflower Inn – Cozy & quaint, right in town. The Fox & Finch Manor – A historic stay just minutes from the venue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRY BANNER -->
+  <RegistryBanner />
+</BaseLayout>

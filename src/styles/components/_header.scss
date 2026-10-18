@@ -1,0 +1,134 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  background-color: $color-bg-light;
+  padding: 20px 0;
+
+  &__container {
+    @include container;
+    @include flex-between;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: $gap-md;
+
+    @include mobile-down {
+      gap: $gap-sm;
+    }
+  }
+
+  &__logo {
+    font-family: $font-heading;
+    font-size: 32px;
+    letter-spacing: -0.05em;
+
+    @include mobile-down {
+      font-size: 24px;
+    }
+  }
+
+  &__date {
+    font-family: $font-body;
+    font-size: 16px;
+    color: $color-black;
+
+    @include mobile-down {
+      font-size: 12px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $gap-lg;
+
+    @include tablet-down {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: opacity 0.3s ease;
+    text-decoration: underline;
+
+    &:hover { opacity: 0.6; }
+  }
+
+  &__menu-btn {
+    display: none;
+    font-family: $font-body;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-black;
+
+    @include tablet-down {
+      display: block;
+    }
+  }
+}
+
+// ============================================
+// MOBILE MENU OVERLAY
+// ============================================
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: $color-bg-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    line-height: 1;
+    color: $color-black;
+    padding: 10px;
+    transition: transform 0.3s ease;
+
+    &:hover { transform: rotate(90deg); }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-lg;
+  }
+
+  
+  &__link {
+    font-family: $font-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-black;
+    transition: opacity 0.3s ease;
+
+    &:hover { opacity: 0.6; }
+
+    @include mobile-down {
+      font-size: 24px;
+    }
+  }
+}

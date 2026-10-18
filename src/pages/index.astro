@@ -1,16 +1,49 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ImageCard from '../components/ImageCard.astro';
+import RegistryBanner from '../components/RegistryBanner.astro';
+
+import heroBg from '../images/hero-bg.jpg';
+import storyImg from '../images/story.jpg';
+import detailsImg from '../images/details.jpg';
+import rsvpImg from '../images/rsvp.jpg';
+import registryImg from '../images/registry.jpg';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__header">
+      <div class="hero__header-container">
+        <h1 class="hero__title">JENNY & JASON</h1>
+      </div>
+    </div>
+
+    <div class="hero__content" style={`background-image: url(${heroBg.src});`}>
+      <div class="hero__overlay"></div>
+      <div class="hero__content-container">
+        <div class="hero__text">
+          <p>With love and gratitude, we invite you to share in the joy of our wedding day.</p>
+          <p>
+            Saturday, September 20, 2025<br />
+            The Golden Elm Manor,<br />
+            St. Augustine, New York
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="home-grid">
+    <div class="home-grid__container">
+      <ImageCard title="OUR STORY" image={storyImg} href="/our-story" />
+      <ImageCard title="THE DETAILS" image={detailsImg} href="/details" />
+      <ImageCard title="RSVP" image={rsvpImg} href="/rsvp" />
+      <ImageCard title="REGISTRY" image={registryImg} href="/registry" />
+    </div>
+  </section>
+
+  <!-- REGISTRY BANNER -->
+  <RegistryBanner />
+</BaseLayout>
