@@ -24,17 +24,20 @@
 1. Склонируйте репозиторий:
   ```bash
   git clone https://github.com/keyshiiie/weeding-landing.git
+  ```
 
 2. Перейдите в папку проекта:
   ```bash
   cd weeding-landing
+  ```
 
 3. Установите зависимости:
   ```bash
   npm install
+  ```
 
 4. Запустите сервер разработки:
   ```bash
   npm run dev
-
+  ```
 5. Откройте http://localhost:4321 в вашем браузере.
