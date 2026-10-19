@@ -1,43 +1,40 @@
-# Astro Starter Kit: Minimal
+# Свадебный сайт-приглашение | Jenny & Jason
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Элегантный, полностью адаптивный сайт-приглашение на свадьбу, разработанный на фреймворке Astro. Проект включает плавные анимации при прокрутке, кастомное мобильное меню и «резиновую» типографику.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🔗 Демо
+**[Посмотреть живой сайт](https://keyshiiie.github.io/weeding-landing/)**
 
-## 🚀 Project Structure
+## ✨ Ключевые особенности
+*   **Адаптивная верстка:** Плавные переходы от мобильных устройств к десктопу благодаря CSS `clamp()` и медиа-запросам.
+*   **Анимации:** Плавное появление блоков и элементов при скролле с помощью библиотеки GSAP (ScrollTrigger).
+*   **Кастомное мобильное меню:** Доступное выезжающее меню на чистом JavaScript.
+*   **Оптимизация изображений:** Использование встроенного компонента `<Image />` из Astro для быстрой загрузки и современных форматов (WebP).
+*   **Архитектура стилей:** SCSS с использованием методологии BEM и переменных для легкой поддержки.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠 Стек технологий
+*   **Фреймворк:** [Astro](https://astro.build/)
+*   **Стилизация:** SCSS (Sass), BEM, CSS-переменные
+*   **Анимации:** [GSAP](https://gsap.com/) + ScrollTrigger
+*   **Шрифты:** [Fontsource](https://fontsource.org/) (Aboreto, Marcellus, EB Garamond)
+*   **Деплой:** GitHub Pages
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🚀 Как запустить локально
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. Склонируйте репозиторий:
+  ```bash
+  git clone https://github.com/keyshiiie/weeding-landing.git
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. Перейдите в папку проекта:
+  ```bash
+  cd weeding-landing
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. Установите зависимости:
+  ```bash
+  npm install
 
-## 🧞 Commands
+4. Запустите сервер разработки:
+  ```bash
+  npm run dev
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+5. Откройте http://localhost:4321 в вашем браузере.
