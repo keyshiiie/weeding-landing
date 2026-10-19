@@ -1,0 +1,117 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.story {
+  background-color: $color-white;
+  padding: clamp(60px, 10vw, 120px) 0;
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  // ============================================
+  // ВЕРХНЯЯ ЧАСТЬ
+  // ============================================
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: clamp(60px, 10vw, 120px);
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-black;
+    margin-top: clamp(40px, 6vw, 60px);
+    margin-bottom: clamp(30px, 5vw, 50px);
+  }
+
+  &__text {
+    font-family: $font-body;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.6;
+    text-align: start;
+    color: $color-black;
+    
+    p {
+      margin-bottom: clamp(40px, 5vw, 80px);
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  // ============================================
+  // СТИЛИ ПОЛАРОИДА (Верхнее фото)
+  // ============================================
+  &__polaroid {
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transform: rotate(3deg); 
+    }
+
+    &--top {
+      width: clamp(250px, 40vw, 350px);
+    }
+  }
+
+  // ============================================
+  // КОЛЛАЖ (Нижняя картинка)
+  // ============================================
+  &__collage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(60px, 10vw, 120px);
+
+    img {
+      width: clamp(300px, 60vw, 600px); // Размер картинки
+      height: auto;
+      display: block;
+      // Если на картинке уже есть прозрачный фон (PNG), ничего больше не нужно
+    }
+  }
+
+  // ============================================
+  // НИЖНЯЯ ЧАСТЬ (Текст + Кнопка)
+  // ============================================
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: clamp(40px, 5vw, 90px);
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: clamp(14px, 2vw, 18px) 48px;
+    background-color: $color-grey;
+    border-radius: 40px;
+    font-family: $font-body;
+    font-size: clamp(12px, 1.2vw, 14px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-white;
+    transition: opacity 0.3s ease;
+
+    &:hover { opacity: 0.9; }
+  }
+}

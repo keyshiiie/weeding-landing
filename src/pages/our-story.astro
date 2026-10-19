@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Импорт картинок
+import photoTop from '../images/story-top.png'; // Верхнее фото (полароид)
+import photoCollage from '../images/story-collage.png'; // Нижнее фото (склейка двух полароидов)
+---
+
+<BaseLayout title="Our Story — Jenny & Jason">
+  <section class="story">
+    <div class="story__container">
+      
+      <!-- Верхняя часть: полароид + заголовок + текст -->
+      <div class="story__top">
+        <div class="story__polaroid story__polaroid--top">
+          <img src={photoTop.src} alt="Jenny and Jason" />
+        </div>
+        
+        <h1 class="story__title">WHERE THE WILD THINGS WED</h1>
+        
+        <div class="story__text">
+          <p>We met at an art walk in Seattle, literally bumping into each other. We started hiking together, a lot. We both love the PNW, the mountains, the coast, everything. We'd be out on trails, just hanging out, talking around a fire. It clicked. We were on the same wavelength. One time, we were hiking and I complained about my boots and Jenny just stopped and started tying my laces for me. That's when I knew. It wasn't some grand gesture. It was just...us.</p>
+          <p>We've built a life together. It's chill, it's real. We love low-key adventures, but also appreciate good wine with friends. From those first hikes to figuring out life together under countless starry skies, we've always found our best moments in the wild.</p>
+        </div>
+      </div>
+
+      <!-- Средняя часть: одна большая картинка-коллаж -->
+      <div class="story__collage">
+        <img src={photoCollage.src} alt="Our memories" />
+      </div>
+
+      <!-- Нижняя часть: текст + кнопка -->
+      <div class="story__bottom">
+        <div class="story__text">
+          <p>It feels right to celebrate surrounded by the people who get us. We're stoked to start this next chapter with you.</p>
+          <p>Onward and upward to the next adventure!</p>
+        </div>
+        <a href="/rsvp" class="story__btn">RSVP</a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
