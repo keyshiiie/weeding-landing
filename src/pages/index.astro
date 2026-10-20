@@ -8,6 +8,10 @@ import storyImg from '../images/story.jpg';
 import detailsImg from '../images/details.jpg';
 import rsvpImg from '../images/rsvp.jpg';
 import registryImg from '../images/registry.jpg';
+
+const base = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : `${import.meta.env.BASE_URL}/`;
 ---
 
 <BaseLayout>
@@ -37,10 +41,10 @@ import registryImg from '../images/registry.jpg';
   <!-- GRID -->
   <section class="home-grid">
     <div class="home-grid__container">
-      <ImageCard title="OUR STORY" image={storyImg} href="/our-story" />
-      <ImageCard title="THE DETAILS" image={detailsImg} href="/details" />
-      <ImageCard title="RSVP" image={rsvpImg} href="/rsvp" />
-      <ImageCard title="REGISTRY" image={registryImg} href="/registry" />
+      <ImageCard title="OUR STORY" image={storyImg} href={`${base}our-story`} />
+      <ImageCard title="THE DETAILS" image={detailsImg} href={`${base}details`} />
+      <ImageCard title="RSVP" image={rsvpImg} href={`${base}rsvp`} />
+      <ImageCard title="REGISTRY" image={registryImg} href={`${base}registry`} />
     </div>
   </section>
 
